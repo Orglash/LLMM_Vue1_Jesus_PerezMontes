@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio Vue1 Jesus Perez Montes</title>
+</head>
+<body>
+	<div id="app">
+		<template v-if = "nombre && genero">
+			<h1 v-if="genero.toLowerCase()=='mujer'">Saludos, señora {{ nombre }}</h1>
+			<h1 v-if="genero.toLowerCase()=='hombre'">Saludos, señor {{ nombre }}</h1>
+		</template>
+		
+		<h3>Introduzca su género:</h3>
+		<h4 v-if="genero && genero.toLowerCase()!='hombre' && genero.toLowerCase()!='mujer'">Introduzca un género válido, humano</h4>
+		<input v-model="genero">
+
+		<h3>Introduzca su nombre:</h3>
+		<input v-model="nombre">
+	</div>	
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.8/dist/vue.js"></script>
+<script>
+	new Vue({
+		el: '#app',
+		data: {
+			nombre: '',
+			genero: ''
+		}
+	});
+</script>
+</body>
+</html>
